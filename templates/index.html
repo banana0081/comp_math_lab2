@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nonlinear Eq/SoEq</title>
+    <link rel="stylesheet" href="/static/styles/main.css">
+</head>
+<body>
+    <header>
+        <button onclick="setForm('/equation')">equation</button>
+        <button onclick="setForm('/system')">system</button>
+    </header>
+
+    <main>
+        <div class="menu">
+            <form>
+                <div class="equations">
+    <div>Уравнения</div>
+                    <div><input type="radio" name="eq" value="1"> x^3-2x</div>
+                    <div><input type="radio" name="eq" value="2"> sin(3x)</div>
+                    <div><input type="radio" name="eq" value="3"> x^3-x+4</div>
+                </div>
+                <div class="methods">
+                    <div>Методы</div>
+                    <div><input type="radio" name="mth" value="1">Метод половинного деления</div>
+                    <div><input type="radio" name="mth" value="2">Метод секущих</div>
+                    <div><input type="radio" name="mth" value="3">Метод простой итерации</div>
+                </div>
+                <div class="txt">
+                    <div>Левый край: <input type="text" id="left"></div>
+                    <div>Правый край: <input type="text" id="right"></div>
+                    <div>Точность: <input type="text" id="eps"></div>
+                </div>
+                <div class="buttons">
+                    <input type="submit" id="submit_eq" onclick="requestEquation(event)" value="Отправить">
+                </div>
+            </form>
+        </div>
+        <div class="results_wrapper">
+            <div class="graph"></div>
+            <div class="result"></div>
+            <div class="table"></div>
+        </div>
+
+    </main>
+    <script src="/static/scripts/serverside_render.js"></script>
+    <script src="/static/scripts/config.js"></script>
+    <script src="/static/scripts/messaging.js"></script>
+    <script src="/static/scripts/dom.js"></script>
+    <script src="/static/scripts/apiFoundation.js"></script>
+    <script src="/static/scripts/validation.js"></script>
+    <script src="/static/scripts/main.js"></script>
+</body>
+</html>
